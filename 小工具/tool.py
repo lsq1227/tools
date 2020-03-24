@@ -56,6 +56,23 @@ def en_de(data,choice,code='utf-8'):
         return
 
 
+def get_page(page,dic):  # 分页器
+    """
+    :param page: page -- int or str num
+    :param dic:  dic --  list
+    :return: list  -- Paged list
+    """
+    page = int(page) - 1
+    limit = int(page) * 10
+    if len(dic) < 10:
+        return dic
+    try:
+        a = dic[limit:limit + 10]
+    except:
+        a = dic[limit:limit + len(dic) - limit]
+    return a
+
+
 
 
 
